@@ -6,11 +6,11 @@
 .player {
     width: 100vw;
     height: 100vh;
-    background: #Efefef;
+    background: #696773;
     &-pochette {
         width: 80%;
         height: 40vh;
-        margin: 0 auto;
+        margin: 5% auto;
         background: #000;
     }
     &-pochetteImg {
@@ -18,19 +18,33 @@
         height: 100%;
         object-fit: fill;
     }
-    &-playPause {
+    &-buttonContainer {
+        width: 60%;
+        margin: 5% auto;
+        display: flex;
+        align-content: center;
+        align-content: center;
+        justify-content: space-between;
+    }
+    &-button {
         width: 30px;
         height: 30px;
-        transition: 0.5s;
+    }
+    &-playPause {
+        width: 35px;
+        height: 35px;
     }
     &-titleContainer {
         display: flex;
+        height: auto;
         align-content: center;
         align-items: center;
+        margin: 0 0 3% 3%;
     }
     &-miniature {
         height: 50px;
         width: 50px;
+        margin-right: 3%;
     }
     &-audioContainer {
         width: 80%;
@@ -38,7 +52,7 @@
     }
     &-title {
         margin: 3% auto 0 auto;
-        background: blue;
+        background: #696773;
     }
     &-titleArtist {
         font-family: sans-serif;
