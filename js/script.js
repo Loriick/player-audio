@@ -1,6 +1,6 @@
-var title = document.querySelector('.title');
-var audioPlayer = document.querySelector('.audio');
-var pochette = document.querySelector('.pochette');
+var title = document.querySelector('.player-title');
+var audioPlayer = document.querySelector('.player-audio');
+var pochette = document.querySelector('.pochette-pochetteImg');
 
 //generer mes titres a partir de mon data
 for (let i = 0; i < audio.length; i++) {
