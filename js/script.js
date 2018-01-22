@@ -7,7 +7,9 @@ var playPause = document.querySelector('.player-audioPlayPause');
 
 //generer mes titres a partir de mon data
 for (let i = 0; i < audio.length; i++) {
-    title.innerHTML += '<p class="player-titleArtist">' + audio[i].artist + " " + '<span class="player-title">' + audio[i].title + '</span>' + '</p>';
+
+
+    title.innerHTML += '<div class="player-titleContainer"> <img class="player-miniature" src="' + audio[i].imgSrc + '"/> <p class="player-titleArtist">' + audio[i].artist + "<br/>" + '<span class="player-titleTitle">' + audio[i].title + '</span> </p> </div>';
 }
 
 var titleItem = document.querySelectorAll('.player-titleArtist');
