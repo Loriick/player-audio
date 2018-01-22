@@ -64,5 +64,12 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
-
+for (let i = 0; i < titleItem.length; i++) {
+    titleItem[i].addEventListener('click', function () {
+        for (var a = 0; a < titleItem.length; a++) {
+            titleItem[a].classList.remove('selected');
+        }
+        titleItem[i].classList.add('selected');
+    });
+};
 

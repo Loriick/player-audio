@@ -1,17 +1,22 @@
+$hidden: hidden;
+$fontColor: #EEFFDB;
+$backgroundColor: #696773;
+$selectedColor: #FF8C61;
 * {
     box-sizing: border-box;
     overflow-x: hidden;
 }
 
 .player {
-    width: 100vw;
-    height: 100vh;
-    background: #696773;
+    width: 380px;
+    height: auto;
+    background: $backgroundColor;
     &-pochette {
-        width: 80%;
-        height: 40vh;
-        margin: 5% auto;
+        width: 100%;
+        height: 300px;
+        margin: 0 auto;
         background: #000;
+        overflow: $hidden
     }
     &-pochetteImg {
         width: 100%;
@@ -20,7 +25,7 @@
     }
     &-buttonContainer {
         width: 60%;
-        margin: 5% auto;
+        margin: 5% auto 0 auto;
         display: flex;
         align-content: center;
         align-content: center;
@@ -39,7 +44,8 @@
         height: auto;
         align-content: center;
         align-items: center;
-        margin: 0 0 3% 3%;
+        margin: 3%;
+        overflow: $hidden;
     }
     &-miniature {
         height: 50px;
@@ -52,14 +58,27 @@
     }
     &-title {
         margin: 3% auto 0 auto;
-        background: #696773;
+    }
+    &-titlePlaylist {
+        font: {
+            family: sans-serif;
+            size: 18px;
+            weight: 600;
+        }
+        color: $fontColor;
+        padding: 5%;
+        text-align: center;
     }
     &-titleArtist {
         font-family: sans-serif;
-        color: #757780;
+        color: $fontColor;
     }
     &-titleTitle {
         font-style: italic;
         font-weight: 200;
     }
+}
+
+.selected {
+    color: $selectedColor;
 }
