@@ -54,8 +54,8 @@ for (let i = 0; i < audio.length; i++) {
 }
 
 var titleItem = document.querySelectorAll('.player-titleArtist');
-//assigner les attributs au clic du titre
 
+//assigner les attributs au clic du titre
 for (let j = 0; j < titleItem.length; j++) {
   titleItem[j].addEventListener('click', () => {
     pochette.setAttribute('src', audio[j].imgSrc)
@@ -92,6 +92,7 @@ previousBtn.addEventListener('click', () => {
   }
 });
 
+
 //next btn
 nextBtn.addEventListener('click', () => {
   if (currentTrack < audio.length - 1) {
@@ -102,6 +103,7 @@ nextBtn.addEventListener('click', () => {
     playPause();
   }
 });
+
 
 for (let i = 0; i < titleItem.length; i++) {
 
