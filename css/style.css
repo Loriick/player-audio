@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
 
 <<<<<<< HEAD
 .player {
@@ -126,7 +127,9 @@
     font-weight: 200; }
 
 .selected {
-  color: #FF8C61; }
+  color: #FF8C61;
+}
+
 
 .author {
   display: none; }
@@ -142,4 +145,3 @@
       color: #EEFFDB; } }
 >>>>>>> master
 
-/*# sourceMappingURL=style.css.map */

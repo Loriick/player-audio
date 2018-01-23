@@ -88,6 +88,7 @@ body {
         width: 35px;
         height: 35px;
     }
+  
     &-titleContainer {
         display: flex; // height: auto;
         align-items: initial;
@@ -138,6 +139,7 @@ body {
     color: $selectedColor;
 }
 
+
 .author {
     display: none;
     @include tablet {
@@ -149,3 +151,4 @@ body {
         @include mainFont;
     }
 }
+
