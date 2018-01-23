@@ -100,6 +100,19 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
+<<<<<<< HEAD
+=======
+
+for (let i = 0; i < titleItem.length; i++) {
+
+  titleItem[i].addEventListener('click', function() {
+    for (var a = 0; a < titleItem.length; a++) {
+      titleItem[a].classList.remove('selected');
+    }
+    titleItem[i].classList.add('selected');
+  });
+};
+>>>>>>> 9a26b506317f93120e024e1353ca533b59628b48
 
 
 //barre de progression avec un canvas

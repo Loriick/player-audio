@@ -2,6 +2,17 @@
   box-sizing: border-box;
   overflow-x: hidden; }
 
+<<<<<<< HEAD
+.player {
+  width: 100vw;
+  height: 100vh;
+  background: #Efefef; }
+  .player-pochette {
+    width: 80%;
+    height: 40vh;
+    margin: 0 auto;
+    background: #000; }
+=======
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   body {
     background: #000;
@@ -32,10 +43,20 @@
     background: #000;
     overflow: hidden;
     border-radius: 7%; }
+>>>>>>> master
   .player-pochetteImg {
     width: 100%;
     height: 100%;
     object-fit: fill; }
+<<<<<<< HEAD
+  .player-titleContainer {
+    display: flex;
+    align-content: center;
+    align-items: center; }
+  .player-miniature {
+    height: 50px;
+    width: 50px; }
+=======
   .player-time {
     margin-top: 5%;
     display: flex; }
@@ -78,10 +99,21 @@
     width: 100%;
     height: 100%;
     object-fit: cover; }
+>>>>>>> master
   .player-audioContainer {
     width: 80%;
     margin: 0 auto; }
   .player-title {
+<<<<<<< HEAD
+    margin: 3% auto 0 auto;
+    background: blue; }
+  .player-titleArtist {
+    font-family: sans-serif;
+    color: #757780; }
+  .player-titleTitle {
+    font-style: italic;
+    font-weight: 200; }
+=======
     margin: 3% auto 0 auto; }
   .player-titlePlaylist {
     font-family: sans-serif;
@@ -114,5 +146,6 @@
       display: block;
       font-family: sans-serif;
       color: #EEFFDB; } }
+>>>>>>> master
 
 /*# sourceMappingURL=style.css.map */
