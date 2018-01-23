@@ -5,7 +5,10 @@ var playBtn = document.querySelector('.player-playPause');
 var previousBtn = document.querySelector('.player-previous');
 var nextBtn = document.querySelector('.player-next');
 var currentTrack = 0;
-
+var canvas = document.querySelector('.player-canvas');
+var timeline = document.querySelector('.player-range');
+var currentTime = document.querySelector('.player-currentTime');
+var durationTime = document.querySelector('.player-duration');
 
 
 const playPause = () => {
@@ -17,6 +20,15 @@ const playPause = () => {
         playBtn.setAttribute('src', 'img/play.png')
     }
 };
+
+const timeConvert = timer => {
+    mins = Math.floor((timer % 3600) / 60)
+    secs = Math.floor(timer % 60);
+    if (secs < 10) {
+        secs = "0" + secs
+    }
+    return mins + ":" + secs;
+}
 
 
 //generer mes titres a partir de mon data
@@ -72,4 +84,44 @@ for (let i = 0; i < titleItem.length; i++) {
         titleItem[i].classList.add('selected');
     });
 };
+
+//barre de progression avec un canvas
+audioPlayer.addEventListener("timeupdate", progressBar, true)
+function progressBar() {
+    var elapsedTime = Math.round(audioPlayer.currentTime);
+    if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+        ctx.fillStyle = "rgb(255, 140, 97)";
+        var fWidth = (elapsedTime / audioPlayer.duration) * (canvas.clientWidth);
+        if (fWidth > 0) {
+            ctx.fillRect(0, 0, fWidth, canvas.clientHeight);
+        }
+    }
+}
+
+// clique sur la barre de progresssion 
+canvas.addEventListener("click", e => {
+    if (!e) {
+        e = window.event;
+    }
+    try {
+        audioPlayer.currentTime = audioPlayer.duration * (e.offsetX / canvas.clientWidth);
+    }
+    catch (err) {
+        if (window.console && console.error("Error:" + err));
+    }
+}, true);
+
+
+//temps en cours
+audioPlayer.addEventListener('timeupdate', () => {
+    currentTime.innerHTML = timeConvert(audioPlayer.currentTime);
+});
+
+//durée du morçeau
+audioPlayer.addEventListener("loadeddata", () => {
+    durationTime.innerHTML = timeConvert(audioPlayer.duration);
+})
+
 
