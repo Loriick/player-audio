@@ -83,17 +83,22 @@ body {
     &-button {
         width: 30px;
         height: 30px;
+        @include desktop {
+            cursor: pointer;
+        }
     }
     &-playPause {
         width: 35px;
         height: 35px;
     }
-  
     &-titleContainer {
-        display: flex; // height: auto;
+        display: flex;
         align-items: initial;
         margin: 3%;
         overflow: $hidden;
+        @include desktop {
+            cursor: pointer;
+        }
     }
     &-miniatureContainer {
         height: 50px;
@@ -139,7 +144,6 @@ body {
     color: $selectedColor;
 }
 
-
 .author {
     display: none;
     @include tablet {
@@ -151,4 +155,3 @@ body {
         @include mainFont;
     }
 }
-
