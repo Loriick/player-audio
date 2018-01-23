@@ -2,6 +2,7 @@
   box-sizing: border-box;
   overflow-x: hidden; }
 
+<<<<<<< HEAD
 .player {
   width: 100vw;
   height: 100vh;
@@ -11,10 +12,43 @@
     height: 40vh;
     margin: 0 auto;
     background: #000; }
+=======
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  body {
+    background: #000;
+    position: relative; } }
+@media screen and (min-width: 64em) {
+  body {
+    background: #000;
+    position: relative; } }
+
+.player {
+  width: 379px;
+  height: 850px;
+  background: #696773; }
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .player {
+      margin: 5% auto 1% auto;
+      width: 379px;
+      height: 750px; } }
+  @media screen and (min-width: 64em) {
+    .player {
+      margin: 5% auto;
+      width: 379px;
+      height: 650px; } }
+  .player-pochette {
+    width: 80%;
+    height: 300px;
+    margin: 3% auto 0 auto;
+    background: #000;
+    overflow: hidden;
+    border-radius: 7%; }
+>>>>>>> master
   .player-pochetteImg {
     width: 100%;
     height: 100%;
     object-fit: fill; }
+<<<<<<< HEAD
   .player-titleContainer {
     display: flex;
     align-content: center;
@@ -22,10 +56,49 @@
   .player-miniature {
     height: 50px;
     width: 50px; }
+=======
+  .player-time {
+    margin-top: 5%;
+    display: flex; }
+  .player-canvas {
+    margin-top: 5%; }
+  .player-timer {
+    font-family: sans-serif;
+    color: #EEFFDB;
+    font-size: 12px; }
+  .player-buttonContainer {
+    width: 60%;
+    margin: 5% auto 0 auto;
+    display: flex;
+    align-content: center;
+    justify-content: space-between; }
+  .player-button {
+    width: 30px;
+    height: 30px; }
+  .player-playPause {
+    width: 35px;
+    height: 35px; }
+  .player-titleContainer {
+    display: flex;
+    align-items: initial;
+    margin: 3%;
+    overflow: hidden; }
+  .player-miniatureContainer {
+    height: 50px;
+    width: 50px;
+    margin-right: 3%;
+    border-radius: 15%;
+    overflow: hidden; }
+  .player-miniature {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+>>>>>>> master
   .player-audioContainer {
     width: 80%;
     margin: 0 auto; }
   .player-title {
+<<<<<<< HEAD
     margin: 3% auto 0 auto;
     background: blue; }
   .player-titleArtist {
@@ -34,5 +107,39 @@
   .player-titleTitle {
     font-style: italic;
     font-weight: 200; }
+=======
+    margin: 3% auto 0 auto; }
+  .player-titlePlaylist {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #EEFFDB;
+    padding: 5%;
+    text-align: center; }
+  .player-titleArtist {
+    font-family: sans-serif;
+    color: #EEFFDB;
+    width: 80%;
+    margin: 0 auto; }
+  .player-titleTitle {
+    font-style: italic;
+    font-weight: 200; }
+
+.selected {
+  color: #FF8C61; }
+
+.author {
+  display: none; }
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .author {
+      display: block;
+      font-family: sans-serif;
+      color: #EEFFDB; } }
+  @media screen and (min-width: 64em) {
+    .author {
+      display: block;
+      font-family: sans-serif;
+      color: #EEFFDB; } }
+>>>>>>> master
 
 /*# sourceMappingURL=style.css.map */
