@@ -21,8 +21,8 @@ const playPause = () => {
 
 //generer mes titres a partir de mon data
 for (let i = 0; i < audio.length; i++) {
-    title.innerHTML += '<div class="player-titleContainer"> <img class="player-miniature" src="' +
-        audio[i].imgSrc + '"/> <p class="player-titleArtist">' + audio[i].artist + "<br/>" +
+    title.innerHTML += '<div class="player-titleContainer"> <div class="player-miniatureContainer"><img class="player-miniature" src="' +
+        audio[i].imgSrc + '"/></div> <p class="player-titleArtist">' + audio[i].artist + "<br/>" +
         '<span class="player-titleTitle">' + audio[i].title + '</span> </p> </div>';
 }
 

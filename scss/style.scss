@@ -12,11 +12,12 @@ $selectedColor: #FF8C61;
     height: auto;
     background: $backgroundColor;
     &-pochette {
-        width: 100%;
+        width: 80%;
         height: 300px;
-        margin: 0 auto;
+        margin: 3% auto 0 auto;
         background: #000;
-        overflow: $hidden
+        overflow: $hidden;
+        border-radius: 7%;
     }
     &-pochetteImg {
         width: 100%;
@@ -47,10 +48,16 @@ $selectedColor: #FF8C61;
         margin: 3%;
         overflow: $hidden;
     }
-    &-miniature {
+    &-miniatureContainer {
         height: 50px;
         width: 50px;
         margin-right: 3%;
+        border-radius: 15%;
+    }
+    &-miniature {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
     &-audioContainer {
         width: 80%;
