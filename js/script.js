@@ -5,10 +5,7 @@ var playBtn = document.querySelector('.player-playPause');
 var previousBtn = document.querySelector('.player-previous');
 var nextBtn = document.querySelector('.player-next');
 var currentTrack = 0;
-
 var muteBtn = document.querySelector('.player-mute');
-
-
 var canvas = document.querySelector('.player-canvas');
 var timeline = document.querySelector('.player-range');
 var currentTime = document.querySelector('.player-currentTime');
@@ -54,8 +51,8 @@ for (let i = 0; i < audio.length; i++) {
 }
 
 var titleItem = document.querySelectorAll('.player-titleArtist');
-//assigner les attributs au clic du titre
 
+//assigner les attributs au clic du titre
 for (let j = 0; j < titleItem.length; j++) {
     titleItem[j].addEventListener('click', () => {
         pochette.setAttribute('src', audio[j].imgSrc)
@@ -91,6 +88,7 @@ previousBtn.addEventListener('click', () => {
     }
 });
 
+
 //next btn
 nextBtn.addEventListener('click', () => {
     if (currentTrack < audio.length - 1) {
@@ -102,22 +100,7 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
-for (let i = 0; i < titleItem.length; i++) {
 
-    titleItem[i].addEventListener('click', function () {
-        for (var a = 0; a < titleItem.length; a++) {
-            titleItem[a].classList.remove('selected');
-        }
-        titleItem[i].classList.add('selected');
-    });
-};
-
-titleItem[i].addEventListener('click', function () {
-    for (var a = 0; a < titleItem.length; a++) {
-        titleItem[a].classList.remove('selected');
-    }
-    titleItem[i].classList.add('selected');
-});
 
 //barre de progression avec un canvas
 audioPlayer.addEventListener("timeupdate", progressBar, true)
