@@ -33,20 +33,14 @@ const timeConvert = timer => {
 
 //generer mes titres a partir de mon data
 for (let i = 0; i < audio.length; i++) {
-<<<<<<< HEAD
-
-
-    title.innerHTML += '<div class="player-titleContainer"> <img class="player-miniature" src="' + audio[i].imgSrc + '"/> <p class="player-titleArtist">' + audio[i].artist + "<br/>" + '<span class="player-titleTitle">' + audio[i].title + '</span> </p> </div>';
-=======
     title.innerHTML += '<div class="player-titleContainer"> <div class="player-miniatureContainer"><img class="player-miniature" src="' +
         audio[i].imgSrc + '"/></div> <p class="player-titleArtist">' + audio[i].artist + "<br/>" +
         '<span class="player-titleTitle">' + audio[i].title + '</span> </p> </div>';
->>>>>>> master
 }
 
 var titleItem = document.querySelectorAll('.player-titleArtist');
-//assigner les attributs au clic du titre
 
+//assigner les attributs au clic du titre
 for (let j = 0; j < titleItem.length; j++) {
     titleItem[j].addEventListener('click', () => {
         pochette.setAttribute('src', audio[j].imgSrc)
@@ -71,16 +65,6 @@ previousBtn.addEventListener('click', () => {
     }
 });
 
-//next btn 
-nextBtn.addEventListener('click', () => {
-    if (currentTrack < audio.length - 1) {
-        currentTrack += 1
-        console.log(currentTrack);
-        pochette.setAttribute('src', audio[currentTrack].imgSrc)
-        audioPlayer.setAttribute('src', audio[currentTrack].audioSrc);
-        playPause();
-    }
-});
 
 for (let i = 0; i < titleItem.length; i++) {
     titleItem[i].addEventListener('click', function () {
