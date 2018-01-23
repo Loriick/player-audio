@@ -5,20 +5,25 @@ var playBtn = document.querySelector('.player-playPause');
 var previousBtn = document.querySelector('.player-previous');
 var nextBtn = document.querySelector('.player-next');
 var currentTrack = 0;
+
+var muteBtn = document.querySelector('.player-mute');
+
+
 var canvas = document.querySelector('.player-canvas');
 var timeline = document.querySelector('.player-range');
 var currentTime = document.querySelector('.player-currentTime');
 var durationTime = document.querySelector('.player-duration');
 
 
+
 const playPause = () => {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playBtn.setAttribute('src', 'img/pause.png');
-    } else {
-        audioPlayer.pause();
-        playBtn.setAttribute('src', 'img/play.png')
-    }
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    playBtn.setAttribute('src', 'img/pause.png');
+  } else {
+    audioPlayer.pause();
+    playBtn.setAttribute('src', 'img/play.png')
+  }
 };
 
 const timeConvert = timer => {
@@ -31,52 +36,83 @@ const timeConvert = timer => {
 }
 
 
+const muteSound = () => {
+  if (audioPlayer.muted === true) {
+    audioPlayer.muted = true;
+    muteBtn.setAttribute('src', 'img/mute.png');
+  } else {
+    audioPlayer.muted = false;
+    muteBtn.setAttribute('src', 'img/sound.png');
+  }
+}
+
 //generer mes titres a partir de mon data
 for (let i = 0; i < audio.length; i++) {
-    title.innerHTML += '<div class="player-titleContainer"> <div class="player-miniatureContainer"><img class="player-miniature" src="' +
-        audio[i].imgSrc + '"/></div> <p class="player-titleArtist">' + audio[i].artist + "<br/>" +
-        '<span class="player-titleTitle">' + audio[i].title + '</span> </p> </div>';
+  title.innerHTML += '<div class="player-titleContainer"> <div class="player-miniatureContainer"><img class="player-miniature" src="' +
+    audio[i].imgSrc + '"/></div> <p class="player-titleArtist">' + audio[i].artist + "<br/>" +
+    '<span class="player-titleTitle">' + audio[i].title + '</span> </p> </div>';
 }
 
 var titleItem = document.querySelectorAll('.player-titleArtist');
 //assigner les attributs au clic du titre
 
 for (let j = 0; j < titleItem.length; j++) {
-    titleItem[j].addEventListener('click', () => {
-        pochette.setAttribute('src', audio[j].imgSrc)
-        audioPlayer.setAttribute('src', audio[j].audioSrc);
-        currentTrack = j;
+  titleItem[j].addEventListener('click', () => {
+    pochette.setAttribute('src', audio[j].imgSrc)
+    audioPlayer.setAttribute('src', audio[j].audioSrc);
+    currentTrack = j;
 
-        playPause();
-    })
+    playPause();
+  })
 }
 
 //boutton play/pause
 playBtn.addEventListener('click', playPause, false);
 
+
+//boutton mute/Sound
+
+muteBtn.addEventListener('click', function() {
+  if (audioPlayer.muted === false) {
+    audioPlayer.muted = true;
+    muteBtn.setAttribute('src', 'img/mute.png');
+  } else {
+    audioPlayer.muted = false;
+    muteBtn.setAttribute('src', 'img/sound.png');
+  }
+});
 //previous btn
 previousBtn.addEventListener('click', () => {
-    if (currentTrack > 0) {
-        currentTrack -= 1
-        console.log(currentTrack);
-        pochette.setAttribute('src', audio[currentTrack].imgSrc)
-        audioPlayer.setAttribute('src', audio[currentTrack].audioSrc);
-        playPause();
-    }
+  if (currentTrack > 0) {
+    currentTrack -= 1
+    console.log(currentTrack);
+    pochette.setAttribute('src', audio[currentTrack].imgSrc)
+    audioPlayer.setAttribute('src', audio[currentTrack].audioSrc);
+    playPause();
+  }
 });
 
-//next btn 
+//next btn
 nextBtn.addEventListener('click', () => {
-    if (currentTrack < audio.length - 1) {
-        currentTrack += 1
-        console.log(currentTrack);
-        pochette.setAttribute('src', audio[currentTrack].imgSrc)
-        audioPlayer.setAttribute('src', audio[currentTrack].audioSrc);
-        playPause();
-    }
+  if (currentTrack < audio.length - 1) {
+    currentTrack += 1
+    console.log(currentTrack);
+    pochette.setAttribute('src', audio[currentTrack].imgSrc)
+    audioPlayer.setAttribute('src', audio[currentTrack].audioSrc);
+    playPause();
+  }
 });
 
 for (let i = 0; i < titleItem.length; i++) {
+
+  titleItem[i].addEventListener('click', function() {
+    for (var a = 0; a < titleItem.length; a++) {
+      titleItem[a].classList.remove('selected');
+    }
+    titleItem[i].classList.add('selected');
+  });
+};
+
     titleItem[i].addEventListener('click', function () {
         for (var a = 0; a < titleItem.length; a++) {
             titleItem[a].classList.remove('selected');
