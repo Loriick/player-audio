@@ -43,6 +43,14 @@ const muteSound = () => {
     }
 }
 
+const selected = () => {
+    var selectedTrack = document.querySelector('.selected');
+    if (selectedTrack) {
+        selectedTrack.classList.remove('selected');
+    }
+    titleItem[currentTrack].classList.add('selected');
+}
+
 //generer mes titres a partir de mon data
 for (let i = 0; i < audio.length; i++) {
     title.innerHTML += '<div class="player-titleContainer"> <div class="player-miniatureContainer"><img class="player-miniature" src="' +
@@ -81,11 +89,11 @@ muteBtn.addEventListener('click', function () {
 previousBtn.addEventListener('click', () => {
     if (currentTrack > 0) {
         currentTrack -= 1
-        console.log(currentTrack);
         pochette.setAttribute('src', audio[currentTrack].imgSrc)
         audioPlayer.setAttribute('src', audio[currentTrack].audioSrc);
         playPause();
     }
+    selected();
 });
 
 
@@ -93,20 +101,17 @@ previousBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
     if (currentTrack < audio.length - 1) {
         currentTrack += 1
-        console.log(currentTrack);
         pochette.setAttribute('src', audio[currentTrack].imgSrc)
         audioPlayer.setAttribute('src', audio[currentTrack].audioSrc);
         playPause();
     }
+    selected();
 });
 
 //class selected
 for (let i = 0; i < titleItem.length; i++) {
     titleItem[i].addEventListener('click', function () {
-        for (var a = 0; a < titleItem.length; a++) {
-            titleItem[a].classList.remove('selected');
-        }
-        titleItem[i].classList.add('selected');
+        selected();
     });
 };
 
